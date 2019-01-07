@@ -1,0 +1,29 @@
+################################################################################
+################################################################################
+#
+# Module: azure-pipelines.yml
+#
+# Notes:
+#
+# Outerloop pipeline for uploading the shook family website up to azure storage
+#
+# High level overview:
+#
+# 1) Setup python3
+# 2) Call update_site.py passing the azure key
+#
+################################################################################
+################################################################################
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+trigger:
+  - master
+
+pr:
+  - master
+
+steps:
+- script: python update_site.py
+  displayName: 'Hello World'
