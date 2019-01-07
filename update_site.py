@@ -26,6 +26,7 @@ def main():
     """
 
     print("Hello World.")
+    print("Check ci.")
 
     return 0
 
