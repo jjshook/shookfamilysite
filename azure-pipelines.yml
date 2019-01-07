@@ -19,10 +19,10 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 trigger:
-  - master
+- master
 
 pr:
-  - master
+- master
 
 steps:
 - script: python update_site.py
