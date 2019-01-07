@@ -1,0 +1,791 @@
+body
+{
+   background-color: #dcdcdc;
+   background: #dcdcdc url(http://shookfamily.org/images/bg.jpg) repeat-x top;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#wrap
+{
+   background-color: #ffffff;
+   border: 2px solid #00008b;
+}
+
+#wrap.grid
+{
+   background: #ffffff url(http://shookfamily.org/images/grid.png) repeat;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+p, ul, li, h1, h2, h3, h4
+{
+   margin: 0;
+}
+
+h1
+{
+   font-size: 18pt;
+   margin-top: 18pt;
+   margin-bottom: 6pt;
+}
+
+h1.first
+{
+   margin-top: 0;
+   font-size: 18pt;
+   margin-bottom: 6pt;
+}
+
+h1.first_surname
+{
+   margin-top: 0;
+   margin-left: 15px;
+   font-size: 18pt;
+   margin-bottom: 6pt;
+}
+
+h1.cemetery_name
+{
+   margin-top: 0;
+   margin-left: 15px;
+   font-size: 18pt;
+   margin-bottom: 6pt;
+}
+
+h1.pedigree
+{
+   margin-top: 0;
+   margin-left: 15px;
+   font-size: 18pt;
+   margin-bottom: 6pt;
+}
+
+h2
+{
+   margin-top: 12pt;
+   margin-bottom: 6pt;
+   font-size: 14pt;
+}
+
+p
+{
+   font-size: 12pt;
+   margin-bottom: 6pt;
+}
+
+a:link    { color: #00008b; text-decoration: none; }
+a:visited { color: #00008b; text-decoration: none; }
+a:hover   { color: #00008b; text-decoration: none; border-bottom: 2px dashed #000000; }
+a:active  { color: #00008b; text-decoration: none; }
+
+/******************************************************************************/
+/******************************************************************************/
+
+#header
+{
+   background-color: Black;
+}
+   
+#header h1
+{
+   margin: 10px 0px 0 5px;
+   color: White;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 18pt;
+   float: left;
+}
+
+#nav
+{
+   height: 45px;
+}
+
+#nav ul
+{
+   float: right;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   list-style-type: none;
+   font-size: 16pt;
+}
+
+#nav li
+{
+   display: inline;
+   float: left;
+   padding: 4px 15px 5px 15px;
+   margin-top: 2px;
+}
+
+#nav li a
+{
+   text-decoration: none;
+   color: White;
+}
+
+#nav ul li.active, #nav ul li:hover
+{
+   background: #00008b;
+}
+
+#nav a:hover { border-bottom: none; }
+
+/******************************************************************************/
+/******************************************************************************/
+
+#content
+{
+   padding-top: 25px;
+   padding-bottom: 15px;
+}
+
+#content.text
+{
+   margin-left: 10px;
+}
+
+#content hr
+{
+   width: 97.5%;
+   margin: 1.25%;
+   border-bottom: 1px solid #bfbfbf;
+}
+
+#content h2
+{
+   font-size: 16pt;
+   margin-top: 0;
+}
+
+/******************************************************************************/
+/* Cemetery */
+/******************************************************************************/
+
+#cemetery
+{
+   margin-left: 1.25%;
+   width: 97.55%;
+}
+
+#cemetery h2
+{
+   margin-top: 12pt;
+   margin-bottom: 6pt;
+   font-size: 14pt;
+}
+
+#cemetery h2.first
+{
+   margin-top: 0;
+   margin-bottom: 6pt;
+   font-size: 14pt;
+}
+
+#cemetery h2 a
+{
+   text-decoration: none;
+   border: none;
+   color: Black;
+}
+
+#cemetery ul
+{
+   margin: 0;
+   font-size: 11pt;
+}
+
+#cemetery li
+{
+   margin: 0;
+   margin-left: 2.5%;
+   font-size: 11pt;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#left-pane   /* Wraps vitals and genealogy */
+{
+   padding-left: 15px;
+   padding-right: 10px;
+}
+
+#vitals
+{
+   background-color: #00008b;
+   padding: 2px;
+}
+
+#vitals table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #ffffff;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#vitals th, #vitals td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#vitals th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#family
+{
+   background-color: #00008b;
+   padding: 2px;
+}
+
+#family table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #ffffff;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#family th, #family td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#family th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+
+#family hr
+{
+   margin: 0;
+   color: #00008b;
+   background-color: #00008b;
+   height: 2px;
+   width: 100%;
+}
+
+/*
+#family table
+{
+   font-size: 9pt;
+   padding: 2px;
+   margin: 10px 0 10px 10px;
+   background-color: #00008b;
+}
+
+#family th
+{
+   text-align: center;
+   vertical-align: bottom;
+   padding: 3px;
+   background-color: #bfbfbf;
+   border: 1px solid #00008b;
+   border-bottom-width: 2px;
+}
+
+#family th.us_cen_name        { width: 15%; }
+#family th.us_cen_age         { width:  5%; }
+#family th.us_cen_sex         { width:  5%; }
+#family th.us_cen_race        { width:  5%; }
+#family th.us_cen_relation    { width:  5%; }
+#family th.us_cen_marital     { width:  5%; }
+#family th.us_cen_birthplace  { width: 10%; }
+#family th.us_cen_residence   { width: 10%; }
+#family th.us_cen_fbirthplace { width: 10%; }
+#family th.us_cen_mbirthplace { width: 10%; }
+#family th.us_cen_occupation  { width: 10%; }
+#family th.us_cen_industry    { width: 10%; }
+#family th.other              { width: 10%; }
+
+#family td
+{
+   text-align: left;
+   vertical-align: middle;
+   padding: 3px;
+   border: 1px solid Black;
+   border-color: #bfbfbf;
+}
+*/
+
+
+/*
+#family
+{
+   background-color: #00008b;
+   padding: 2px;
+}
+
+#family table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #ffffff;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#family th, #family td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#family th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+*/
+
+/******************************************************************************/
+/******************************************************************************/
+
+#genealogy
+{
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+#genealogy h1.first
+{
+   margin-top: 0;
+   font-size: 18pt;
+   margin-bottom: 6pt;
+}
+
+#genealogy h1
+{
+   font-size: 18pt;
+   margin-top: 12pt;
+   margin-bottom: 6pt;
+}
+
+#genealogy h2
+{
+   margin-bottom: 6pt;
+   font-size: 14pt;
+}
+
+#genealogy p
+{
+   font-size: 11pt;
+}
+
+#genealogy ul
+{
+   margin-left: 15px;
+   margin-bottom: 10px;
+   font-size: 11pt;
+}
+
+#genealogy li
+{
+   margin: 0;
+}
+
+#genealogy a
+{
+   margin: 0;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 11pt;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#right-pane   /* Wraps sidebar */
+{
+   margin-bottom: 15px;
+}
+
+#sidebar
+{
+   border: 1px solid Black;
+   overflow: auto;
+   width: 90%;
+   height: 300px;
+   margin-left: 5%;
+   margin-right: 5%;
+   padding-bottom: 10px;
+}
+
+#sidebar h1
+{
+   margin: 0 0 10px 0;
+   padding: 4px;
+   text-align: center;
+   vertical-align: middle;
+   background-color: #bfbfbf;
+   border-bottom: 1px solid Black;
+}
+
+#sidebar h1 a
+{
+   color: Black;
+   font-size: 12pt;
+   font-weight: bold;
+}
+
+#sidebar a
+{
+   margin: 0;
+   margin-left: 10px;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 11pt;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#pedigree-wrap   /* Wraps pedigree */
+{
+   margin: 10px 0 25px 0;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#sources
+{
+   margin-left: 10px;
+}
+
+#sources img
+{
+   margin: 0;
+   float: none;
+}
+
+#sources table
+{
+   font-size: 9pt;
+   padding: 2px;
+   margin: 10px 0 10px 10px;
+   background-color: #00008b;
+}
+
+#sources th
+{
+   text-align: center;
+   vertical-align: bottom;
+   padding: 3px;
+   background-color: #bfbfbf;
+   border: 1px solid #00008b;
+   border-bottom-width: 2px;
+}
+
+#sources th.us_cen_name        { width: 15%; }
+#sources th.us_cen_age         { width:  5%; }
+#sources th.us_cen_sex         { width:  5%; }
+#sources th.us_cen_race        { width:  5%; }
+#sources th.us_cen_relation    { width:  5%; }
+#sources th.us_cen_marital     { width:  5%; }
+#sources th.us_cen_birthplace  { width: 10%; }
+#sources th.us_cen_residence   { width: 10%; }
+#sources th.us_cen_fbirthplace { width: 10%; }
+#sources th.us_cen_mbirthplace { width: 10%; }
+#sources th.us_cen_occupation  { width: 10%; }
+#sources th.us_cen_industry    { width: 10%; }
+#sources th.other              { width: 10%; }
+
+#sources td
+{
+   text-align: left;
+   vertical-align: middle;
+   padding: 3px;
+   border: 1px solid Black;
+   border-color: #bfbfbf;
+}
+
+#sources.sup
+{
+  position: relative;
+  font-size: 80%;
+  line-height: 0;
+  vertical-align: super;
+}
+
+#sources p
+{
+   font-size: 10pt;
+   margin-bottom: 3pt;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#index
+{
+   width: 95%;
+   padding-left: 2.5%;
+   padding-right: 2.5%;
+}
+
+#index ul
+{
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   list-style-type: none;
+   font-size: 12pt;
+   text-align: center;
+}
+
+#index li
+{
+   display: inline;
+}
+
+#index li a
+{
+   color: #00008b;
+   text-decoration: none;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#pedigree
+{
+   background-color: #00008b;
+   padding: 1px;
+   width: 95%;
+   margin-left: 2.5%;
+}
+
+#pedigree table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #dcdcdc;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#pedigree th, #pedigree td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#pedigree th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#pedigree2
+{
+   background-color: #00008b;
+   padding: 1px;
+   width: 95%;
+   margin-left: 2.5%;
+}
+
+#pedigree2 table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #dcdcdc;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#pedigree2 th, #pedigree2 td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#pedigree2 th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+#pedigree3
+{
+   background-color: #00008b;
+   padding: 1px;
+   width: 95%;
+   margin-left: 2.5%;
+}
+
+#pedigree3 table
+{
+   margin: 0;
+   border-collapse: collapse;
+   background-color: #dcdcdc;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+#pedigree3 th, #pedigree3 td
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+   color: Black;
+   text-align: left;
+   vertical-align: middle;
+   padding: 4px;
+   border: 1px solid black;
+}
+
+#pedigree3 th
+{
+   font-weight: bold;
+   color: White;
+   background-color: #bfbfbf;
+   text-align: left;
+   width: 20%;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+.pedigree
+{
+   background-color: #00008b;
+   width: 95%;
+   margin-left: 2.5%;
+}
+
+.pedigree table
+{
+   margin: 0;
+   border-collapse: collapse;
+   border: 2px Solid Black;
+   background-color: #dcdcdc;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+.pedigree td
+{
+   border: 1px Solid Black;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+.generic_table
+{
+   margin: 0;
+   border-collapse: collapse;
+   border: 2px Solid Black;
+   background-color: #dcdcdc;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12pt;
+}
+
+.generic_table th
+{
+   font-weight: bold;
+   color: White;
+   border: 1px Solid Black;
+   background-color: #bfbfbf;
+   text-align: center;
+}
+
+.generic_table td
+{
+   border: 1px Solid Black;
+}
+
+/******************************************************************************/
+/******************************************************************************/
+
+.row {  background-color: White; }
+.row:hover { background-color: #ededed; }
+
+/******************************************************************************/
+/******************************************************************************/
+
+p.side_panel
+{
+   margin: -3pt 0 3pt 0;
+}
+
+h1 span
+{
+    display: block;
+    border-bottom: 3pt;
+}
+
+p span 
+{
+    display: block;
+    border-bottom: 3pt;
+}
+
+td span 
+{
+    display: block;
+    border-bottom: 3pt;
+}
+
+#em
+{
+   display: inline;
+   text-decoration: underline;
+   font-weight: bolder;
+}

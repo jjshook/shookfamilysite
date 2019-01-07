@@ -1,0 +1,259 @@
+Attribute,Definition,Example Value,Example Comment,Type,Unique,Imputation
+_AGE_G,Six-level imputed age category,1,Age 18 to 24,Cat.,1. 2. 3. 4. 5. 6.,Complete data; no imputation needed
+_AGE65YR,Two-level age category,1,Age 18 to 64,Cat.,1. 2. 3.,Complete data; no imputation needed
+_AGE80,Imputed Age value collapsed above 80,18 - 24,Imputed Age 18 to 24,Cat.,26. 64. 20. 51. 72. 19. ...,Complete data; no imputation needed
+_AGEG5YR,Fourteen-level age category,1,Age 18 to 24,Cat.,2. 9. 1. 7. 11. 10. ...,Complete data; no imputation needed
+_AIDTST3,Adults who have ever been tested for HIV,1,Yes,Cat.,nan 1. 2. 9.,NaN converted to -1
+_ALTETH2,Adults aged 65+ who have had all their natural teeth extracted,1,No,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_ASTHMS1,Computed asthma status,1,Current,Cat.,1. 2. 3. 9.,Complete data; no imputation needed
+_BMI5,Body Mass Index (BMI),Jan-99,1 or greater,Cont.,nan 1695. 3330. 2399. ...,NaN replaced with mean
+_BMI5CAT,Four-categories of Body Mass Index (BMI),1,Underweight,Cat.,nan 1. 2. 3. 4.,NaN converted to -1
+_CASTHM1,Adults who have been told they currently have asthma,1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_CHISPNC,"Child Hispanic, Latino/a, or Spanish origin calculated variable",1,"Child of Hispanic, Latino/a, or Spanish origin Notes: Hispanic, Latino/a, Spanish",Cat.,1. 2. 9.,Complete data; no imputation needed
+_CHLDCNT,Number of children in household,1,No children in household,Cat.,1. 2. 3. 4. 5. 6. 9.,Complete data; no imputation needed
+_CPRACE,Preferred Child Race Categories,1,White,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 77. 99.,NaN converted to -1
+_CRACE1,Child multiracial race categorization,1,White,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 77. 99.,NaN converted to -1
+_DENVST2,"Adults who have visited a dentist, dental hygenist or dental clinic within the past year",1,Yes,Cat.,1. 2. 9.,Complete data; no imputation needed
+_DRDXAR1,Respondents who have had a doctor diagnose them as having some form of arthritis,1,Diagnosed with arthritis,Cat.,1. 2.,Complete data; no imputation needed
+_DRNKDY4,Calculated total number of alcoholic beverages consumed per day,0,Did not drink,Cat.,0. 133. 13. 10. 9900. 120. 67.,Convert 9900 to -1
+_DRNKMO4,Calculated total number of alcoholic beverages consumed per month,0,Did not drink in the past month,Cat.,0. 40. 4. 3. 9999. 36. 20. 15,Convert 9999 to -1
+_EDUCAG,Level of education completed,1,Did not graduate High School,Cat.,1. 2. 3. 4. 9.,Complete data; no imputation needed
+_EXTETH2,Adults aged 18+ who have had permanent teeth extracted,1,Not at risk,Cat.,1. 2. 9.,Complete data; no imputation needed
+_FLSHOT6,Adults aged 65+ who have had a flu shot within the past year,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_HCVU651,Respondents aged 18-64 who have any form of health care coverage,1,Have health care coverage,Cat.,nan 1. 2. 9.,NaN converted to -1
+_HISPANC,"Hispanic, Latino/a, or Spanish origin calculated variable",1,"Hispanic, Latino/a, or Spanish origin",Cat.,1. 2. 9.,Complete data; no imputation needed
+_IMPCAGE,Imputed Child Age,1,0-4 Years old,Cat.,1. 2. 9.,Complete data; no imputation needed
+_IMPCRAC,Imputed Child Race/Ethnicity,1,"White, non-Hispanic",Cat.,1. 2. 3. 4. 5. 6. 9.,NaN converted to -1
+_IMPCSEX,Imputed Child Gender,1,Male,Cat.,nan 1. 2.,NaN converted to -1
+_IMPEDUC,"Imputed Education Level (This value is the reported education level or an imputed education level, if the respondent refused to give an education level. The value of the imputed education level will be computed from the sample if the respondent refused to give an education level.)",1,Never attended school or only kindergarten,Cat.,1. 2. 3. 4. 5. 6.,Complete data; no imputation needed
+_IMPHOME,Which one of these groups would you say best represents the child?s race? (If 40 (Asian) or 50 (Pacific Islander) is selected read and code subcategories underneath major heading.),Blank,Not asked or missing,Unk.,1. 2. 3.,Complete data; no imputation needed
+_IMPMRTL,"Imputed Marital Status (This value is the reported marital status or an imputed marital status, if the respondent refused to give a marital status. The value of the imputed marital status will be computed from the sample if the respondent refused to give a marital status.)",1,Married,Cat.,1. 2. 3. 4. 5. 6.,Complete data; no imputation needed
+_IMPNPH,Imputed number of phones used in weighting,1,Number of phones,Cont.,nan 1. 2. 3. 4. 5. 6.,NaN converted to -1
+_IMPRACE,"Imputed race/ethnicity value (This value is the reported race/ethnicity or an imputed race/ethnicity, if the respondent refused to give a race/ethnicity. The value of the imputed race/ethnicity will be the most common race/ethnicith response for that region of the state)",1,"White, Non-Hispanic",Cat.,1. 2. 3. 4. 5. 6.,Complete data; no imputation needed
+_INCOMG,Income categories,1,Less than,Cat.,1. 2. 3. 4. 5. 9.,Complete data; no imputation needed
+_LTASTH1,Adults who have ever been told they have asthma,1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_MAM502Y,Women respondents aged 50+ who have had a mammogram in the past two years,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_MRACE1,Calculated multiracial race categorization,1,White,Cat.,nan 1. 2. 77. 99. 6. 4. 7. 3. 5.,"Converted 77 (don't know), 99 (refused), and NaN converted to -1"
+_PNEUMO2,Adults aged 65+ who have ever had a pneumonia vaccination,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_PRACE1,Preferred race category,1,White,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 77. 99.,NaN converted to -1
+_PSU,Primary Sampling Unit (Equal to Annual Sequence Number),Hidden,Hidden,Unk.,,Complete data; hidden data not used
+_RACE,Race/ethnicity categories,1,"White only, non-Hispanic",Cat.,1. 2. 3. 4. 5. 6. 7. 8. 9.,Complete data; no imputation needed
+_RACE_G1,Race groups used for internet prevalence tables,1,White - Non-Hispanic,Cat.,nan 1. 2. 3. 4. 5.,NaN converted to -1
+_RACEG21,White non-Hispanic race group,1,Non-Hispanic White,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RACEGR3,Five-level race/ethnicity category,1,"White only, Non-Hispanic",Cat.,1. 2. 3. 4. 5. 9.,Complete data; no imputation needed
+_RAWRAKE,"Raw weighting factor used in raking (Number of adults in the household (NUMADULT, maximum of 5) divided by the imputed number of phones (_IMPNPH, maximum of 3).)",Hidden,Data not displayed,Unk.,,Complete data; hidden data not used
+_RFBING5,"Binge drinkers (males having five or more drinks on one occasion, females having four or more drinks on one occasion)",1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFBLDS2,Respondents aged 50+ who have had a blood stool test within the past two years,1,Yes,Cat.,nan 1. 2. 9.,NaN converted to -1
+_RFBMI5,Adults who have a body mass index greater than 25.00 (Overweight or Obese),1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFDRHV4,Heavy drinkers (adult men having more than two drinks per day and adult women having more than one drink per day),1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFDRMN4,Adult Men who are Heavy drinkers (having more than two drinks per day),1,No,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_RFDRWM4,Adult Women who are Heavy drinkers (having more than one drink per day),1,No,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_RFHLTH,Adults with good or better health,1,Good or Better Health,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFMAM2Y,Women respondents aged 40+ who have had a mammogram in the past two years,1,Yes,Cat.,nan 1. 2. 9.,NaN converted to -1
+_RFPAP32,Women respondents aged 18+ who have had a pap test in the past three years,1,Received a mammogram within the past 2 years,Cat.,nan 1. 2. 9.,NaN converted to -1
+_RFPSA21,Male respondents aged 40+ who have had a PSA test in the past 2 years,1,Yes,Cat.,nan 1. 2. 9.,NaN converted to -1
+_RFSEAT2,Always or Nearly Always Wear Seat Belts Calculated Variable,1,Always or Almost Always Wear Seat Belt,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFSEAT3,Always Wear Seat Belts Calculated Variable,1,Always Wear Seat Belt,Cat.,1. 2. 9.,Complete data; no imputation needed
+_RFSIGM2,Respondents aged 50 or older who have had a sigmoidoscopy or colonoscopy,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+_RFSMOK3,Adults who are current smokers,1,No,Cat.,1. 2. 9.,Complete data; no imputation needed
+_SMOKER3,"Four-level smoker status: Everyday smoker, Someday smoker, Former smoker, Non-smoker",1,Current smoker - now smokes every day,Cat.,1. 2. 3. 4.  9.,Complete data; no imputation needed
+_STATE,State FIPS Code ,1,Alabama,Cat.,9.  34.  36. ...,Complete data; no imputation needed
+_STRWT,Stratum weight (Number of records in a stratum (NRECSTR) divided by the number of records selected (NRECSEL).),Hidden,Data not displayed,Unk.,,Complete data; hidden data not used
+_STSTR,"Sample Design Stratification Variable (A five digit number that combines the values for _STATE (first two characters), _GEOSTR (third and fourth character), and _DENSTR2 (final character).)",Hidden,Data not displayed,Unk.,,Complete data; hidden data not used
+_TOTINDA,Adults who reported doing physical activity or exercise during the past 30 days other than their regular job,1,Had physical activity or exercise,Cat.,1. 2. 9.,Complete data; no imputation needed
+_WT2RAKE,Design weight used in raking (Stratum weight (_STRWT) multiplied by the raw weighting factor (_RAWRAKE).),Hidden,Data not displayed,Unk.,,Complete data; hidden data not used
+ADDEPEV2,"(Ever told) you that you have a depressive disorder, including depression, major depression, dysthymia, or minor depression?",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+ALCDAY5,"During the past 30 days, how many days per week or per month did you have at least one drink of any alcoholic beverage such as beer, wine, a malt beverage or liquor?",101 - 199,Days per week,Cont.,nan 888. 220. 204. 203. 212. ...,NaN replaced with mean
+ASACTLIM,"During the past 12 months, how many days were you unable to work or carry out your usual activities because of your asthma?",1 - 365,Number of days,Cont.,nan,No data (all NaN)
+ASATTACK,"During the past 12 months, have you had an episode of asthma or an asthma attack?",1,Yes,Cat.,nan,No data (all NaN)
+ASBIADVC,Were you offered advice about what level of drinking is harmful or risky for your health?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASBIALCH,"You told me earlier that your last routine checkup was [within the past year/within the past 2 years]. At that checkup, were you asked in person or on a form if you drink alcohol?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASBIBING,Did the healthcare provider specifically ask whether you drank [5 FOR MEN /4 FOR WOMEN] or more alcoholic drinks on an occasion?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASBIDRNK,Did the health care provider ask you in person or on a form how much you drink?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASBIRDUC,"At your last routine checkup, were you advised to reduce or quit your drinking?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASDRVIST,"During the past 12 months, how many times did you see a doctor, nurse or other health professional for urgent treatment of worsening asthma symptoms?",Jan-87,Number of visits [87 = 87 or more],Cont.,nan,No data (all NaN)
+ASERVIST,"During the past 12 months, how many times did you visit an emergency room or urgent care center because of your asthma?",Jan-87,Number of visits [87 = 87 or more],Cont.,nan,No data (all NaN)
+ASINHALR,"During the past 30 days, how often did you use a prescription asthma inhaler DURING AN ASTHMA ATTACK to stop it?",1,1 to 4 times (in the past 30 days),Cat.,nan,No data (all NaN)
+ASNOSLEP,"During the past 30 days, how many days did symptoms of asthma make it difficult for you to stay asleep? Would you say?",1,One or two,Cat.,nan,No data (all NaN)
+ASRCHKUP,"During the past 12 months, how many times did you see a doctor, nurse, or other health professional for a routine checkup for your asthma?",Jan-87,Number of visits [87 = 87 or more],Cont.,nan,No data (all NaN)
+ASTHMA3,(Ever told) you had asthma?,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+ASTHMAGE,"How old were you when you were first told by a doctor, nurse or other health professional that you had asthma?",Nov-96,Age 11 or older [96 = 96 and older],Cont.,nan,No data (all NaN)
+ASTHMED3,"During the past 30 days, how many days did you take a prescription asthma medication to PREVENT an asthma attack from occurring?",1,1 to 14 days,Cat.,nan,No data (all NaN)
+ASTHNOW,Do you still have asthma?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+ASYMPTOM,"Symptoms of asthma include cough, wheezing, shortness of breath, chest tightness and phlegm production when you don?t have a cold or respiratory infection. During the past 30 days, how often did you have any symptoms of asthma?",1,Less than once a week,Cat.,nan,No data (all NaN)
+AVEDRNK2,"One drink is equivalent to a 12-ounce beer, a 5-ounce glass of wine, or a drink with one shot of liquor. During the past 30 days, on the days when you drank, about how many drinks did you drink on the average? (A 40 ounce beer would count as 3 drinks, or a cocktail drink with 2 shots would count as 2 drinks.)",Jan-76,Number of drinks,Cont.,nan 1. 2. 3. 4. 5. 7.,"Converted 77 (don't know), 99 (refused), and NaN converted to mean"
+BLDSTOOL,A blood stool test is a test that may use a special kit at home to determine whether the stool contains blood. Have you ever had this test using a home kit?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+BLDSUGAR,"About how often do you check your blood for glucose or sugar? Include times when checked by a family member or friend, but do NOT include times when checked by a health professional.",101 - 199,Times per day,Cont.,nan 101. 104. 103. 102. 777.,"Converted 777 (don't know), 888 (never), 999 (refused), and NaN converted to mean"
+BLIND,"Are you blind or do you have serious difficulty seeing, even when wearing glasses?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+CARERCVD,"In general, how satisfied are you with the health care you received? Would you say?",1,Very satisfied,Cat.,nan 1. 2. 3. 7. 8. 9.,NaN converted to -1
+CASTHDX2,"Has a doctor, nurse or other health professional EVER said that the child has asthma?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+CASTHNO2,Does the child still have asthma?,1,Yes,Cat.,nan 1. 2. 7.,NaN converted to -1
+CHCCOPD1,"(Ever told) you have Chronic Obstructive Pulmonary Disease or COPD, emphysema or chronic bronchitis?",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CHCKIDNY,"(Ever told) you have kidney disease? Do NOT include kidney stones, bladder infection or incontinence.(Incontinence is not being able to control urine flow.)",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CHCOCNCR,(Ever told) you had any other types of cancer?,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CHCSCNCR,(Ever told) you had skin cancer?,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CHECKUP1,"About how long has it been since you last visited a doctor for a routine checkup? [A routine checkup is a general physical exam, not an exam for a specific injury, illness, or condition.]",1,Within past year (anytime less than 12 months ago),Cat.,1. 2. 3. 4. 5. 7. 8. 9.,Complete data; no imputation needed
+CHILDREN,How many children less than 18 years of age live in your household?,Jan-87,Number of children,Cont.,nan 88. 5. 3. 1. 2. 99. 4.,"Converted 88 (none), 99 (refused), and NaN converted to mean"
+CHKHEMO3,"A test for ?A one C? measures the average level of blood sugar over the past three months. About how many times in the past 12 months has a doctor, nurse, or other health professional checked you for ?A one C??",Jan-76,Number of times,Cont.,nan 2. 3. 4. 77. 98. 1. ...,"Converted 77(don't know), 88 (none), 98 (never heard of), 99 (refused), and NaN converted to mean"
+CNCRAGE,"At what age were you told that you had cancer? (If Response = 2 (Two) or 3 (Three or more), ask: ?At what age was your first diagnosis of cancer??)",Jan-97,Age in years,Cont.,nan,No data (all NaN)
+CNCRDIFF,How many different types of cancer have you had?,1,Only one,Cat.,nan,No data (all NaN)
+CNCRTYP1,"What type of cancer was it? (If Response = 2 (Two) or 3 (Three or more), ask: ?With your most recent diagnoses of cancer, what type of cancer was it??)",1,Breast cancer,Cat.,nan,No data (all NaN)
+COLGHOUS,Do you live in college housing?,1,Yes?Go to STATERES,Cat.,nan 1.,NaN converted to -1
+CPDEMO1,Do you have a cell phone for personal use? Please include cell phones used for both business and personal use,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+CSRVCLIN,Did you participate in a clinical trial as part of your cancer treatment?,1,Yes,Cat.,nan,No data (all NaN)
+CSRVCTL1,Is your pain currently under control?,1,"Yes, with medication (or treatment)",Cat.,nan,No data (all NaN)
+CSRVDEIN,Were you EVER denied health insurance or life insurance coverage because of your cancer?,1,Yes,Cat.,nan,No data (all NaN)
+CSRVDOC1,What type of doctor provides the majority of your health care?,1,Cancer Surgeon,Cat.,nan,No data (all NaN)
+CSRVINSR,"With your most recent diagnosis of cancer, did you have health insurance that paid for all or part of your cancer treatment? (?Health insurance? also includes Medicare, Medicaid, or other types of state health programs.)",1,Yes,Cat.,nan,No data (all NaN)
+CSRVINST,Were these instructions written down or printed on paper for you?,1,Yes,Cat.,nan,No data (all NaN)
+CSRVPAIN,Do you currently have physical pain caused by your cancer or cancer treatment?,1,Yes,Cat.,nan,No data (all NaN)
+CSRVRTRN,"Have you EVER received instructions from a doctor, nurse, or other health professional about where you should return or who you should see for routine cancer check-ups after completing treatment for cancer?",1,Yes,Cat.,nan,No data (all NaN)
+CSRVSUM,"Did any doctor, nurse, or other health professional EVER give you a written summary of all the cancer treatments that you received?",1,Yes,Cat.,nan,No data (all NaN)
+CSRVTRT1,"Are you currently receiving treatment for cancer? By treatment, we mean surgery, radiation therapy, chemotherapy, or chemotherapy pills.",1,Yes?Go to next module,Cat.,nan,No data (all NaN)
+CTELENUM,Correct Telephone Number?,1,Yes?Go to PVTRESD1,Cat.,1. 7. 9.,Complete data; no imputation needed
+CVDCRHD4,(Ever told) you had angina or coronary heart disease?,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CVDINFR4,"(Ever told) you had a heart attack, also called a myocardial infarction?",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+CVDSTRK3,(Ever told) you had a stroke,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+DECIDE,"Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DELAYMED,Have you delayed getting needed medical care for any of the following reasons in the past 12 months? Select the most important reason.,1,You couldn?t get through on the telephone,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 9,NaN converted to -1
+DIABAGE2,How old were you when you were told you have diabetes?,1,Age in years [1 to 97 where 97 is >= 97],Cont.,nan 55. 11. 40. 43. 98. 48. 45. ...,"Converted 98 (never heard of), 99 (refused), and NaN converted to mean"
+DIABEDU,Have you ever taken a course or class in how to manage your diabetes yourself?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DIABETE3,"(Ever told) you have diabetes (If ""Yes"" and respondent is female, ask ""Was this only when you were pregnant?"". If Respondent says pre-diabetes or borderline diabetes, use response code 4.)",1,Yes,Cat.,1. 2. 3. 4. 7. 9.,Complete data; no imputation needed
+DIABEYE,Has a doctor ever told you that diabetes has affected your eyes or that you had retinopathy?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DIFFALON,"Because of a physical, mental, or emotional condition, do you have difficulty doing errands alone such as visiting a doctor?s office or shopping?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DIFFDRES,Do you have difficulty dressing or bathing?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DIFFWALK,Do you have serious difficulty walking or climbing stairs?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+DISPCODE,Final Disposition,1100,Completed Interview,Cat.,1100. 1200.,Complete data; no imputation needed
+DLYOTHER,Delayed Getting Medical Care Other Response,Hidden,Data not displayed,Unk.,,Complete data; hidden data not used
+DOCTDIAB,"About how many times in the past 12 months have you seen a doctor, nurse, or other health professional for your diabetes?",Jan-76,Number of times,Cont.,nan 3. 4. 77. 1. 5. 2. 8. 88.,"Converted 77 (don't know), 88 (none), 99 (refused), and NaN converted to mean"
+DRADVISE,Has a doctor or other health professional ever advised you to reduce sodium or salt intake?,1,Yes,Cat.,nan,No data (all NaN)
+DRNK3GE5,"Considering all types of alcoholic beverages, how many times during the past 30 days did you have 5 or more drinks for men or 4 or more drinks for women on an occasion?",Jan-76,Number of Times,Cont.,nan 1. 4. 6. 10. 88. ...,"Converted 88 (none) to 0; 77 (don't know), 99 (refused), and NaN converted to -1"
+DRNKANY5,Adults who reported having had at least one drink of alcohol in the past 30 days.,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+DRNKDRI2,"During the past 30 days, how many times have you driven when you?ve had perhaps too much to drink?",Jan-76,Number of times,Cont.,nan 88. 2. 1. 4. 77. 99. 8. ...,"Converted 77 (don't know), 88 (none), 99 (refused), and NaN converted to mean"
+DROCDY3_,Drink-occasions-per-day,0,No Drink-Occasions per day,Cont.,0. 67. 13. 10. 900. ...,Complete data; no imputation needed
+DRVISITS,"How many times have you been to a doctor, nurse, or other health professional in the past 12 months?",Jan-76,Number of times,Cont.,nan 6. 77. 4. 3. 30. 88. ...,"Converted 77 (don't know), 88 (none), and NaN converted to mean"
+EDUCA,What is the highest grade or year of school you completed?,1,Never attended school or only kindergarten,Cat.,nan 1. 2. 3. 4. 5. 6. 9.,NaN converted to -1
+EMPLOY1,Are you currently??,1,Employed for wages,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 9.,NaN converted to -1
+EMTSUPRT,How often do you get the social and emotional support you need?,1,Always,Cat.,nan,No data (all NaN)
+EXERANY2,"During the past month, other than your regular job, did you participate in any physical activities or exercises such as running, calisthenics, golf, gardening, or walking for exercise?",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+EYEEXAM,When was the last time you had an eye exam in which the pupils were dilated? This would have made you temporarily sensitive to bright light.,1,Within the past month (anytime less than 1 month ago),Cat.,nan 1. 2. 3. 4. 7. 8. 9.,NaN converted to -1
+FALL12MN,"In the past 12 months, how many times have you fallen?",Jan-76,Number of times,Cont.,nan 88. 1. 2. 3. 5. 77. ...,"Converted 77 (don't know), 88 (none), 99 (refused), and NaN converted to -1"
+FALLINJ2,"How many of these falls caused an injury? By an injury, we mean the fall caused you to limit your regular activities for at least a day or to go see a doctor.",Jan-76,Number of falls,Cont.,nan 88. 1. 2. 3. 5. 77. ...,"Converted 77 (don't know), 88 (none), 99 (refused), and NaN converted to -1"
+FEETCHK,About how many times in the past 12 months has a health professional checked your feet for any sores or irritations?,Jan-76,Number of times,Cont.,nan 88. 7. 3. 77. 6. ...,"Converted 77 (don't know), 88 (none), 99 (refused), and NaN converted to -1"
+FEETCHK2,"About how often do you check your feet for any sores or irritations? Include times when checked by a family member or friend, but do NOT include times when checked by a health professional.",101 - 199,Times per day,Cont.,nan 101. 102. 888. 201. 103.,"Converted 555 (no feet), 777 (don't know), 888 (none), 999 (refused), and NaN converted to -1"
+FLSHTMY2,During what month and year did you receive your most recent flu shot injected into your arm or flu vaccine that was sprayed in your nose?,12013 - 122014,Month / Year,Date,nan 12014. 112013. 102013.,Not using this date attribute (for now)
+FLUSHOT6,"During the past 12 months, have you had either a flu shot or a flu vaccine that was sprayed in your nose? (A new flu shot came out in 2011 that injects vaccine into the skin with a very small needle. It is called Fluzone Intradermal vaccine. This is also considered a flu shot.)",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+FMONTH,File Month ,1,January,Cat.,1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12.,Complete data; no imputation needed
+GENHLTH,Would you say that in general your health is:,1,Excellent,Cat.,1. 2. 3. 4. 5. 7. 9.,Complete data; no imputation needed
+HADHYST2,Have you had a hysterectomy? (A hysterectomy is an operation to remove the uterus (womb).),1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HADMAM,A mammogram is an x-ray of each breast to look for breast cancer. Have you ever had a mammogram?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HADPAP2,A Pap test is a test for cancer of the cervix. Have you ever had a Pap test?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HADSGCO1,"For a SIGMOIDOSCOPY, a flexible tube is inserted into the rectum to look for problems. A COLONOSCOPY is similar, but uses a longer tube, and you are usually given medication through a needle in your arm to make you sleepy and told to have someone else drive you home after the test. Was your MOST RECENT exam a sigmoidoscopy or a colonoscopy?",1,Sigmoidoscopy,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HADSIGM3,Sigmoidoscopy and colonoscopy are exams in which a tube is inserted in the rectum to view the colon for signs of cancer or other health problems. Have you ever had either of these exams?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HAVARTH3,"(Ever told) you have some form of arthritis, rheumatoid arthritis, gout, lupus, or fibromyalgia? (Arthritis diagnoses include: rheumatism, polymyalgia rheumatica; osteoarthritis (not osteporosis); tendonitis, bursitis, bunion, tennis elbow; carpal tunnel syndrome, tarsal tunnel syndrome; joint infection, etc.)",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+HEIGHT3,"About how tall are you without shoes? (If respondent answers in metrics, put a 9 in the first column)[Round fractions down.]",200 - 711,Height (ft/inches),Cont.,nan 506. 508. 511. 603. 507. 505. ...,This attribute is ft/inches: --/---- (funky)
+HIVTST6,Have you ever been tested for HIV? Do not count tests you may have had as part of a blood donation. Include testing fluid from your mouth.,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+HIVTSTD3,"Not including blood donations, in what month and year was your last HIV test? (If response is before January 1985, code ""777777"".)",11985 - 122015,Code month and year,Date,nan 771987. 772013. 12000. 12014.,Not using this date attribute (for now)
+HLTHCVR1,What is the primary source of your health care coverage? Is it?,1,A plan purchased through an employer or union,Cat.,nan 3. 4. 1. 8. 7. 99. 2. 5. 77. 6.,"Converted 77 (don't know), 99 (refused), and NaN converted to -1"
+HLTHPLN1,"Do you have any kind of health care coverage, including health insurance, prepaid plans such as HMOs, or government plans such as Medicare, or Indian Health Service?",1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+HOWLONG,How long has it been since you had your last mammogram?,1,Within the past year (anytime less than 12 months ago),Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+HPLSTTST,How long has it been since you had your last HPV test?,1,Within the past year (anytime less than 12 months ago),Cat.,nan,No data (all NaN)
+HPVADSHT,How many HPV shots did you receive?,2-Jan,Number of shots,Cont.,nan,No data (all NaN)
+HPVADVC2,"Have you ever had the HPV vaccination? (Human Papilloma Virus (Human Pap?uh?loh?muh Virus), Gardasil (Gar?duh? seel), Cervarix (Serv a rix))",1,Yes,Cat.,nan,No data (all NaN)
+HPVTEST,An HPV test is sometimes given with the Pap test for cervical cancer screening. Have you ever had an HPV test?,1,Yes,Cat.,nan,No data (all NaN)
+HTIN4,Reported height in inches,36 - 95,Height in inches,Cont.,"nan 66. 68. 71. 75. 67. 65. ...,",NaN converted to mean
+HTM4,Reported height in meters,91 - 244,Height in meters [2 implied decimal places],Cont.,nan 168. 173. 180. 191. 170. 165. ...,NaN converted to mean
+IDATE,Interview Date ,Hidden,Hidden,Cont.,5212014 10252014 11082014 ...,Complete data; no imputation needed
+IDAY,Interview Day,1,Day 1,Cont.,21 25  8 27 26 20 14 13 15 ...,Complete data; no imputation needed
+IMFVPLAC,At what kind of place did you get your last flu shot/vaccine?,1,A doctor?s office or health maintenance organization (HMO),Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 77. 99.,"Converted 77 (don't know), 99 (refused), and NaN converted to -1"
+IMONTH,Interview Month,1,January,Cont.,1. 2. 3. 4. 5. 6. ...,Complete data; no imputation needed
+INCOME2,"Is your annual household income from all sources: (If respondent refuses at any income level, code ""Refused."")",1,"Less than 10,000",Cat.,1. 2. 3. 4. 5. 6. 7. 8. 77. 99. ...,"Converted 77 (don't know), 99 (refused), and NaN converted to -1"
+INSULIN,Are you now taking insulin?,1,Yes,Cat.,nan 1. 2. 9.,NaN converted to -1
+INTERNET,Have you used the internet in the past 30 days?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+IYEAR,Interview Year,2014,Year 2014,Cont.,2014 2015,Complete data; no imputation needed
+LADULT,Are you 18 years of age or older?,1,"Yes, Male Respondent",Cat.,nan 1. 2.,NaN converted to -1
+LASTDEN3,"How long has it been since you last visited a dentist or a dental clinic for any reason? Include visits to dental specialists, such as orthodontists",1,Within the past year (anytime less than 12 months ago),Cat.,1. 2. 3. 4. 7. 9.,Complete data; no imputation needed
+LASTPAP2,How long has it been since you had your last Pap test?,1,Within the past year (anytime less than 12 months ago),Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+LASTSIG3,How long has it been since you had your last sigmoidoscopy or colonoscopy?,1,Within the past year (anytime less than 12 months ago),Cat.,nan 1. 2. 3. 4. 5. 6. 7. 9.,NaN converted to -1
+LASTSMK2,"How long has it been since you last smoked a cigarette, even one or two puffs?",1,Within the past month (less than 1 month ago),Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 77. 99.,NaN converted to -1
+LENGEXAM,How long has it been since your last breast exam?,1,Within the past year (anytime less than 12 months ago),Cat.,1. 2. 3. 4. 5. 6. 7. 8. 77. 99.,"Converted 77 (don't know), 99 (refused), and NaN converted to -1"
+LONGWTCH,"How many days, weeks, months, or years have you been watching or reducing your sodium or salt intake?",101 - 199,Day(s),Cont.,nan,No data (all NaN)
+LSATISFY,"In general, how satisfied are you with your life?",1,Very satisfied,Cat.,nan,No data (all NaN)
+LSTBLDS3,How long has it been since you had your last blood stool test using a home kit?,1,Within the past year (anytime less than 12 months ago),Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+LSTCOVRG,About how long has it been since you last had health care coverage?,1,6 months or less,Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+MARITAL,Are you: (marital status),1,Married,Cat.,nan 1. 2. 3. 4. 5. 6. 9.,NaN converted to -1
+MAXDRNKS,"During the past 30 days, what is the largest number of drinks you had on any occasion?",Jan-76,Number of drinks,Cont.,nan 2. 4. 1. 3. 5. 6. 77.,"Converted 77 (don't know), 99 (refused), and NaN converted to mean"
+MEDBILL1,"Do you currently have any health care bills that are being paid off over time? (This could include medical bills being paid off with a credit card, through personal loans, or bill paying arrangements with hospitals or other providers. The bills can be from earlier years as well as this year.)",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+MEDCOST, Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?,1,Yes,Cat.,1. 2. 7. 9.,Complete data; no imputation needed
+MEDICARE,Do you have Medicare? (Medicare is a coverage plan for people 65 or over and for certain disabled people.),1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+MEDSCOST,Was there a time in the past 12 months when you did not take your medication as prescribed because of cost? Do not include over-the-counter (OTC) medication.,1,Yes,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+MENTHLTH,"Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?",30-Jan,1 to 30 days,Cont.,88.  15.   1.  25.   5.   2.  77. ...,"Converted 77 (don't know), 99 (refused), and NaN converted to mean"
+MSCODE,Metropolitan Status Code,1,In the center city of an MSA,Cat.,nan 1. 2. 5. 3.,NaN converted to -1
+NOCOV121,In the PAST 12 MONTHS was there any time when you did NOT have ANY health insurance or coverage?,1,Yes?Go to Module 04.06 DRVISITS,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+NUMADULT,Number of Adults in Household,1,One adult in the household,Cont.,nan 1. 4. 2. 7. 3. 6. 5. 8. 17.,NaN converted to -1
+NUMHHOL2,Do you have more than one telephone number in your household? Do not include cell phones or numbers that are only used by a computer or fax machine,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+NUMMEN,Number of Adult Men in Household,1,One adult man in Household,Cont.,nan 0. 2. 1. 5. 3. 4. 15.,NaN converted to -1
+NUMPHON2,How many of these telephone numbers are residential numbers?,1,Residential telephone number,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 9.,NaN converted to -1
+NUMWOMEN,Number of Adult Women in Household,1,One adult woman in Household,Cont.,nan 1. 2. 0. 3. 4. 5.,NaN converted to -1
+PAINACT2,"During the past 30 days, for about how many days did pain make it hard for you to do your usual activities, such as self-care, work, or recreation?",30-Jan,Number of days,Cont.,nan,No data (all NaN)
+PCPSAAD2,"Has a doctor, nurse, or other health professional EVER talked with you about the advantages of the PSA test?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PCPSADI1,"Has a doctor, nurse, or other health professional EVER talked with you about the disadvantages of the PSA test?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PCPSARE1,"Has a doctor, nurse, or other health professional EVER recommended that you have a PSA test?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PCPSARS1,What was the MAIN reason you had this PSA test ? was it ??,1,Part of a routine exam,Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+PDIABTST,Have you had a test for high blood sugar or diabetes within the past three years?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PERSDOC2,"Do you have one person you think of as your personal doctor or health care provider? (If ""No"" ask ""Is there more than one or is there no person who you think of as your personal doctor or health care provider?"".)",1,"Yes, only one",Cat.,1. 2. 3. 7. 9.,Complete data; no imputation needed
+PHYSHLTH,"Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?",30-Jan,1 to 30 days,Cont.,88. 8. 3. 5. 77. 20. 10.,"Converted 77 (don't know),  88 (none),  (99 (refused), and NaN converted to mean"
+PNEUVAC3,A pneumonia shot or pneumococcal vaccine is usually given only once or twice in a person?s lifetime and is different from the flu shot. Have you ever had a pneumonia shot?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+POORHLTH,"During the past 30 days, for about how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?",30-Jan,1 to 30 days,Cont.,nan 1. 3. 6. 10. 88.,"Converted 88 (none) to 0; 77 (don't know), 99 (refused), and NaN converted to -1"
+PREDIAB1,"Have you ever been told by a doctor or other health professional that you have pre-diabetes or borderline diabetes? (If ?Yes? and respondent is female, ask: ?Was this only when you were pregnant??)",1,Yes,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+PREGNANT,"To your knowledge, are you now pregnant?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PROFEXAM,"A clinical breast exam is when a doctor, nurse, or other health professional feels the breast for lumps. Have you ever had a clinical breast exam?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PSATEST1,Have you EVER HAD a PSA test?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+PSATIME,How long has it been since you had your last PSA test?,1,Within the past year (anytime less than 12 months ago),Cat.,nan 1. 2. 3. 4. 5. 7. 9.,NaN converted to -1
+PVTRESD1,Is this a private residence?,1,Yes?Go to STATERES,Cat.,nan 1.,NaN converted to -1
+QLACTLM2,"Are you limited in any way in any activities because of physical, mental, or emotional problems?",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+QLHLTH2,"During the past 30 days, for about how many days have you felt very healthy and full of energy?",30-Jan,Number of days,Cont.,nan,No data (all NaN)
+QLMENTL2,"During the past 30 days, for about how may days have you felt sad, blue, or depressed?",30-Jan,Number of days,Cont.,nan,No data (all NaN)
+QLSTRES2,"During the past 30 days, for about how many days have you felt worried, tense, or anxious?",30-Jan,Number of days,Cont.,nan,No data (all NaN)
+QSTLANG,Language identifier,1,English,Cat.,nan 1. 2.,NaN converted to -1
+QSTVER,Questionnaire Version Identifier,10,Landline single questionnaire,Cat.,20. 10. 11. 12. 13. 21. 22. 23.,Complete data; no imputation needed
+RCHISLA1,"Is the child Hispanic, Latino/a, or Spanish origin?",Blank,Not asked or missing,Unk.,nan,No data (all NaN)
+RCSBIRTH,What is the birth month and year of the ?Xth? child?,Blank,Not asked or missing,Unk.,nan,No data (all NaN)
+RCSBRAC1,Unknown,,,,nan,No data (all NaN)
+RCSGENDR,What is the birth month and year of the ?Xth? child?,Blank,Not asked or Missing,Unk.,,Complete data; hidden data not used
+RCSRACE1,Which one or more of the following would you say is the race of the child? (If 40 (Asian) or 50 (Pacific Islander) is selected read and code subcategories underneath major heading.)[Select all that apply],Blank,Not asked or missing,Unk.,,Complete data; hidden data not used
+RCSRLTN2,Is the child a boy or a girl?,1,"Parent (include biologic, step, or adoptive parent)",Cat.,nan 1. 2. 3. 4. 5. 6. 7. 9.,NaN converted to -1
+RENTHOM1,Do you own or rent your home? (Home is defined as the place where you live most of the time/the majority of the year.),1,Own,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+RMVTETH3,"How many of your permanent teeth have been removed because of tooth decay or gum disease? Include teeth lost to infection, but do not include teeth lost for other reasons, such as injury or orthodontics. (If wisdom teeth are removed because of tooth decay or gum disease, they should be included in the count for lost teeth)",1,1 to 5 teeth,Cat.,1. 2. 3. 4. 5. 6. 7. 9.,Complete data; hidden data not used
+RRATWRK2,"Within the past 12 months at work, do you feel you were treated worse than, the same as, or better than people of other races?",1,Worse than other races,Cat.,nan,No data (all NaN)
+RRCLASS2,"How do other people usually classify you in this country? Would you say White, Black or African American, Hispanic or Latino, Asian, Native Hawaiian or Other Pacific Islander, American Indian or Alaska Native, or some other group?",1,White,Cat.,nan,No data (all NaN)
+RRCOGNT2,"How often do you think about your race? Would you say never, once a year, once a month, once a week, once a day, once an hour, or constantly?",1,Never,Cat.,nan,No data (all NaN)
+RREMTSM2,"Within the past 30 days, have you felt emotionally upset, for example angry, sad, or frustrated, as a result of how you were treated based on your race?",1,Yes,Cat.,nan,No data (all NaN)
+RRHCARE3,"Within the past 12 months when seeking health care, do you feel your experiences were worse than, the same as, or better than for people of other races?",1,Worse than other races,Cat.,nan,No data (all NaN)
+RRPHYSM2,"Within the past 30 days, have you experienced any physical symptoms, for example, a headache, an upset stomach, tensing of your muscles, or a pounding heart, as a result of how you were treated based on your race?",1,Yes,Cat.,nan,No data (all NaN)
+SCNTLPAD,"Thinking about the last time you worked, at your main job or business, how were you generally paid for the work you do? Were you:",1,Paid by salary,Cat.,nan,No data (all NaN)
+SCNTLWK1,"Thinking about the last time you worked, about how many hours did you work per week at all of your jobs and businesses combined?",Jan-96,Hours (1-96 or more),Cont.,nan,No data (all NaN)
+SCNTMEL1,How often in the past 12 months would you say you were worried or stressed about having enough money to buy nutritious meals? Would you say,1,Always,Cat.,nan,No data (all NaN)
+SCNTMNY1,How often in the past 12 months would you say you were worried or stressed about having enough money to pay your rent/mortgage? Would you say,1,Always,Cat.,nan,No data (all NaN)
+SCNTPAID,"At your main job or business, how are you generally paid for the work you do. Are you:",1,Paid by salary,Cat.,nan,No data (all NaN)
+SCNTVOT1,Did you vote in the last presidential election? [The November 2012 election between Barack Obama and Mitt Romney.],1,Yes,Cat.,nan,No data (all NaN)
+SCNTWRK1,About how many hours do you work per week on all of your jobs and businesses combined?,Jan-96,Hours (1-96 or more)?Go to Module 15.07 SCNTVOT1,Cont.,nan,No data (all NaN)
+SEATBELT,How often do you use seat belts when you drive or ride in a car? Would you say?,1,Always,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 9.,NaN converted to -1
+SEQNO,Annual Sequence Number,Hidden,Hidden,Unk.,2014000001 2014000002 ...,Complete data; hidden data not used
+SEX,Indicate sex of respondent,1,Male?Go to Section 08.8.23 QLACTLM2,Cat.,1. 2.,Complete data; hidden data not used
+SHINGLE2,Have you ever had the shingles or zoster vaccine?,1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+SLEPTIM1,"On average, how many hours of sleep do you get in a 24-hour period?",24-Jan,Number of hours [1 to 24],Cont.,9. 6. 7. 8. 10. 16. ...,"Converted 77 (don't know), 99 (refused), and NaN converted to mean"
+SMOKDAY2,"Do you now smoke cigarettes every day, some days, or not at all?",1,Every day,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+SMOKE100,Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes],1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+STATERES,Do you reside in [state]?,1,Yes?Go to CELLFON3,Cat.,nan 1.,NaN converted to -1
+STOPSMK2,"During the past 12 months, have you stopped smoking for one day or longer because you were trying to quit smoking?",1,Yes?Go to Section 09.05 USENOW3,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+SXORIENT,Do you consider yourself to be: (We ask this question in order to better understand the health and health care needs of people with different sexual orientations.),1,Straight,Cat.,nan 1. 2. 3. 4. 7. 9.,NaN converted to -1
+TETANUS,"Since 2005, have you had a tetanus shot? (If yes, ask: ?Was this Tdap, the tetanus shot that also has pertussis or whooping cough vaccine??)",1,"Yes, received Tdap",Cat.,nan,No data (all NaN)
+TRNSGNDR,"Do you consider yourself to be transgender? (If yes, ask ?Do you consider yourself to be male-to-female, female-to-male, or gender non-conforming?)",1,"Yes, Transgender, male-to-female",Cat.,nan 1. 2.. 3. 4. 7. 9.,NaN converted to -1
+USEEQUIP,"Do you now have any health problem that requires you to use special equipment, such as a cane, a wheelchair, a special bed, or a special telephone? (Include occasional use or use in certain circumstances)",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+USENOW3,"Do you currently use chewing tobacco, snuff, or snus every day, some days, or not at all? (Snus (Swedish for snuff) is a moist smokeless tobacco, usually sold in small pouches that are placed under the lip against the gum.)[Snus (rhymes with ?goose?)]",1,Every day,Cat.,nan 1. 2. 3. 7. 9.,NaN converted to -1
+VETERAN3,"Have you ever served on active duty in the United States Armed Forces, either in the regular military or in a National Guard or military reserve unit? (Active duty does not include training for the Reserves or National Guard, but DOES include activation, for example, for the Persian Gulf War.)",1,Yes,Cat.,nan 1. 2. 7. 9.,NaN converted to -1
+WEIGHT2,"About how much do you weigh without shoes? (If respondent answers in metrics, put a 9 in the first column)[Round fractions up.]",50 - 0999,Weight (pounds),Cont.,nan 105. 219. 172. 180. 140. 185. ...,This attribute is ft/inches: --/---- (funky)
+WHRTST10,"Where did you have your last HIV test ? at a private doctor or HMO office, at a counseling and testing site, in the emergency room, as an inpatient in a hospital, at a clinic, in a jail or prison, at a drug treatment facility, at home, or somewhere else?",1,Private doctor or HMO,Cat.,nan 1. 2. 3. 4. 5. 6. 7. 8. 9. 77. 99.,NaN converted to -1
+WTCHSALT,Are you currently watching or reducing your sodium or salt intake?,1,Yes,Cat.,nan,No data (all NaN)
+WTKG3,Reported weight in kilograms,2300 - 29500,Weight in kilograms [2 implied decimal places],Cont.,nan 4763. 9934. 7802. 8165. ...,"Converted 99999 (don't know/refused), and NaN converted to mean"
