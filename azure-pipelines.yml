@@ -18,6 +18,12 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+trigger:
+  - master
+
+pr:
+  - master
+
 steps:
 - script: python update_site.py
   displayName: 'Hello World'
