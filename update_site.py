@@ -43,13 +43,14 @@ pip3 install azure-storage-queue
 parser = argparse.ArgumentParser(description=description)
 
 parser.add_argument("--download_images", default=False, action="store_true")
+parser.add_argument("--upload_images", default=False, action="store_true")
 parser.add_argument("--force", "-f", default=False, action="store_true")
 
 ################################################################################
 # Main
 ################################################################################
 
-def main(args):
+async def main(args):
     """ Main method
 
     Return:
@@ -58,12 +59,10 @@ def main(args):
     storage_helper = ShookFamilyAzureStorageHelper()
 
     if args.download_images:
-        task = storage_helper.download_non_tracked_files(args.force)
+        await storage_helper.download_non_tracked_files(args.force)
 
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(task)
-
-    return 0
+    elif args.upload_images:
+        await storage_helper.upload_non_tracked_files(args.force)
 
 ################################################################################
 # __main__
@@ -71,4 +70,8 @@ def main(args):
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    sys.exit(main(args))
+
+    task = main(args)
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(task)

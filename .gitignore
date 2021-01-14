@@ -4,6 +4,8 @@
 # Python
 *.pyc
 
+__pycache__/*
+
 # Mac specific
 *.DS_Store/*
 .DS_Store
