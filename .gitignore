@@ -2,7 +2,11 @@
 .vscode/
 
 # Python
-.pyc
+*.pyc
+
+# Mac specific
+*.DS_Store/*
+.DS_Store
 
 # Ignore all pictures
 # The enlistment will have a large amount of pictures; however, they are not
