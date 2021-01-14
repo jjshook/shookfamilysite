@@ -1,7 +1,7 @@
 body
 {
    background-color: #dcdcdc;
-   background: #dcdcdc url(http://shookfamily.org/images/bg.jpg) repeat-x top;
+   background: #dcdcdc url(/images/bg.jpg) repeat-x top;
 }
 
 /******************************************************************************/
@@ -15,7 +15,7 @@ body
 
 #wrap.grid
 {
-   background: #ffffff url(http://shookfamily.org/images/grid.png) repeat;
+   background: #ffffff url(/images/grid.png) repeat;
 }
 
 /******************************************************************************/
