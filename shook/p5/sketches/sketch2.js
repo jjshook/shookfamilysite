@@ -14,10 +14,10 @@
       var rectHeight = 100.0;
 
       var rects = [
-         { x: xOrigin,         y: (canvasHeight-rectHeight)/2-25,   width: rectWidth, height: rectHeight/3, "label":"Daniel Shook", "link":"http://shookfamily.org/shook/shook_daniel.html" },
-         { x: xOrigin,         y: (canvasHeight-rectHeight)/2+25,   width: rectWidth, height: rectHeight/3, "label":"Jefferson Shook", "link":"http://shookfamily.org/shook/shook_jefferson.html" },
-         { x: xOrigin,         y: (canvasHeight-rectHeight)/2+75,   width: rectWidth, height: rectHeight/3, "label":"Nathaniel Shook", "link":"http://shookfamily.org/shook/shook_nathaniel.html" },
-         { x: xOrigin + 175.0, y: ((canvasHeight-rectHeight)/2)-65, width: rectWidth, height: rectHeight, "label":"Jacob Shook", "link":"http://shookfamily.org/shook/shook_nathaniel.html" },
+         { x: xOrigin,         y: (canvasHeight-rectHeight)/2-25,   width: rectWidth, height: rectHeight/3, "label":"Daniel Shook", "link":"/shook/shook_daniel.html" },
+         { x: xOrigin,         y: (canvasHeight-rectHeight)/2+25,   width: rectWidth, height: rectHeight/3, "label":"Jefferson Shook", "link":"/shook/shook_jefferson.html" },
+         { x: xOrigin,         y: (canvasHeight-rectHeight)/2+75,   width: rectWidth, height: rectHeight/3, "label":"Nathaniel Shook", "link":"/shook/shook_nathaniel.html" },
+         { x: xOrigin + 175.0, y: ((canvasHeight-rectHeight)/2)-65, width: rectWidth, height: rectHeight, "label":"Jacob Shook", "link":"/shook/shook_nathaniel.html" },
          { x: xOrigin + 175.0, y: ((canvasHeight-rectHeight)/2)+65, width: rectWidth, height: rectHeight, "label":"Elizabeth Unknown", "link":"" }
       ];
 
@@ -37,10 +37,10 @@
 
       p.mouseClicked = function() {
          switch (getRectIdx()) {
-            case 0: window.location.href = "http://shookfamily.org/shook/shook_daniel.html"; break;
-            case 1: window.location.href = "http://shookfamily.org/shook/shook_jefferson.html"; break;
-            case 2: window.location.href = "http://shookfamily.org/shook/shook_nathaniel.html"; break;
-            case 3: window.location.href = "http://shookfamily.org/shook/shook_jacob.html"; break;
+            case 0: window.location.href = "/shook/shook_daniel.html"; break;
+            case 1: window.location.href = "/shook/shook_jefferson.html"; break;
+            case 2: window.location.href = "/shook/shook_nathaniel.html"; break;
+            case 3: window.location.href = "/shook/shook_jacob.html"; break;
             case 4: break;
             default: break;
          }

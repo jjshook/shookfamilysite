@@ -3,3 +3,13 @@
 
 # Python
 .pyc
+
+# Ignore all pictures
+# The enlistment will have a large amount of pictures; however, they are not
+# tracked by git.
+
+*.png
+*.jpg
+*.jpeg
+*.tng
+*.tiff
