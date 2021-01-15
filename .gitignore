@@ -2,7 +2,13 @@
 .vscode/
 
 # Python
-.pyc
+*.pyc
+
+__pycache__/*
+
+# Mac specific
+*.DS_Store/*
+.DS_Store
 
 # Ignore all pictures
 # The enlistment will have a large amount of pictures; however, they are not
@@ -13,3 +19,12 @@
 *.jpeg
 *.tng
 *.tiff
+*.pdf
+*.xls
+*.docx
+*.xlsx
+*.wmv
+*.db
+*.gif
+*.JPG
+*.jbg
