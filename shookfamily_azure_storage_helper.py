@@ -8,7 +8,9 @@
 ################################################################################
 
 import asyncio
+import base64
 import glob
+import hashlib
 import os
 import sys
 
@@ -80,6 +82,7 @@ class Diff:
                     has_difference = True
 
             if has_difference:
+                self.has_differences = True
                 differences.append(item)
             else:
                 self.overlap.append(item)
@@ -144,7 +147,7 @@ class ShookFamilyAzureStorageHelper:
         # at this point we have downloaded all files
         pass
 
-    async def upload_non_tracked_files(self, force=False):
+    async def upload_non_tracked_files(self, diff=True, force=False):
         """ Upload all untracked files to azure storage in the enlistment
 
         Notes:
@@ -155,21 +158,58 @@ class ShookFamilyAzureStorageHelper:
         """
 
         self.prompt(force)
-        items_in_azure_storage, items_on_disk, differences = self.get_files()
+        items_in_azure_storage, items_on_disk, differences = await self.get_files()
+
+        if not differences.has_differences:
+            return
 
         untracked_files = []
-        for extension in items_in_azure_storage:
-            if extension not in self.tracked_extensions:
-                for blob in items_in_azure_storage[extension]:
-                    untracked_files.append(blob)
+        for item in differences.second_differences:
+            untracked_files.append(item)
 
         # Start the download of all these blobs
         tasks = []
-        for blob in untracked_files:
-            tasks.append(self.download_blob(blob, log=False))
+        for path in untracked_files:
+            tasks.append(self.upload_blob(path, log=False))
 
         # Create the progress bar
         progress_bar = tqdm.tqdm(total=len(untracked_files))
+        for task in asyncio.as_completed(tasks):
+            await task
+            progress_bar.update()
+
+        # at this point we have downloaded all files
+        pass
+
+    async def upload_tracked_files(self, diff=True, force=False):
+        """ Upload all tracked files to azure storage in the enlistment
+
+        Notes:
+        
+        This is a lossy operation. It will overwrite all blobs current in
+        azure storage. This method will prompt to make sure the user is ok with
+        this.
+        """
+
+        self.prompt(force)
+        items_in_azure_storage, items_on_disk, differences = await self.get_files(get_untracked_files=False)
+
+        if not differences.has_differences:
+            return
+
+        files_to_upload = []
+        for item in differences.first_differences:
+            files_to_upload.append(item)
+        for item in differences.second_differences:
+            files_to_upload.append(item)
+
+        # Start the download of all these blobs
+        tasks = []
+        for path in files_to_upload:
+            tasks.append(self.upload_blob(path, log=False))
+
+        # Create the progress bar
+        progress_bar = tqdm.tqdm(total=len(files_to_upload))
         for task in asyncio.as_completed(tasks):
             await task
             progress_bar.update()
@@ -185,27 +225,25 @@ class ShookFamilyAzureStorageHelper:
     async def download_blob(self, blob, log=True):
         path_on_disk = os.path.join(self.enlistment_path, blob.name)
 
-        with open(path_on_disk, 'wb') as file_handle:
-            blob_client = self.web_container.get_blob_client(blob.name)
-
-            retry_count = 5
-            success = False
-
-            while success is False and retry_count > 0:
-                try:
+        retry_count = 5
+        success = False
+        while success is False and retry_count > 0:
+            try:
+                with open(path_on_disk, 'wb') as file_handle:
+                    blob_client = self.web_container.get_blob_client(blob.name)
                     stream = await blob_client.download_blob()
                     data = await stream.readall()
                     file_handle.write(data)
                     success = True
-                except Exception as exception:
-                    retry_count -= 1
+            except Exception as exception:
+                retry_count -= 1
 
-            if not success:
-                print(f"Failed to download {path_on_disk}")
-            elif log:
-                print(f"Downloaded: {path_on_disk}")
+        if not success:
+            print(f"Failed to download {path_on_disk}")
+        elif log:
+            print(f"Downloaded: {path_on_disk}")
 
-    async def get_files(self):
+    async def get_files(self, get_untracked_files=True):
         items_in_azure_storage = defaultdict(lambda: [])
         items_on_disk = defaultdict(lambda: [])
 
@@ -237,27 +275,55 @@ class ShookFamilyAzureStorageHelper:
 
         def check_item_size(item):
             assert not isinstance(item, type(str))
-            size_on_disk = os.path.getsize(os.path.join(self.enlistment_path, item["name"]))
+            file_path = os.path.join(self.enlistment_path, item["name"])
+
+            size_on_disk = os.path.getsize(file_path)
             azure_storage_size = item["size"]
 
             if size_on_disk != azure_storage_size:
                 return False
 
+            if item["name"] in self.tracked_extensions:
+                md5_hash_local = self.md5(file_path)
+                azure_md5_hash = bytes(item["content_settings"]["content_md5"])
+
+                # Compare a hash of the local file with azure storage. If there is
+                # a difference then there has been a change. This is to catch any
+                # change that leaves the same size between azure storage and the
+                # local file system.
+                if md5_hash_local != azure_md5_hash:
+                    return False
+
             return True
 
         differences = Diff(extra_validation_first=check_item_size)
 
+        def items_to_check(extension):
+            if get_untracked_files is True:
+                if extension not in self.tracked_extensions and extension != "":
+                    return True
+                else:
+                    return False
+            else:
+                if extension in self.tracked_extensions and extension != "":
+                    return True
+                else:
+                    return False
+
         for extension in items_on_disk:
-            if extension not in self.tracked_extensions and extension != "":
+            if items_to_check(extension):
                 differences = compare_blob_list(differences, items_in_azure_storage[extension], items_on_disk[extension])
                 has_differences = differences.has_differences
                 has_files_in_azure_storage_not_on_disk = not (len(differences.first_differences) == 0)
 
-                # The enlistment should always be in sync with azure storage
-                # for tracked files.
-                assert not has_files_in_azure_storage_not_on_disk
-
         return items_in_azure_storage, items_on_disk, differences
+
+    def md5(self, file_path):
+        hash_md5 = hashlib.md5()
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                hash_md5.update(chunk)
+        return hash_md5.digest()
 
     def prompt(self, force):
         if force is not True:
@@ -272,22 +338,22 @@ class ShookFamilyAzureStorageHelper:
             if line_read.lower() != "y":
                 return
 
-    async def upload_blob(self, blob, log=True):
-        path_on_disk = os.path.join(self.enlistment_path, blob.name)
+    async def upload_blob(self, path, log=True):
+        path_on_disk = os.path.join(self.enlistment_path, path)
+        assert os.path.exists(path_on_disk) and os.path.isfile(path_on_disk)
 
-        with open(path_on_disk, 'rb') as file_handle:
-            blob_client = self.web_container.get_blob_client(blob.name)
+        retry_count = 5
+        success = False
+        while success is False and retry_count > 0:
+            try:
+                with open(path_on_disk, 'rb') as file_handle:
+                    blob_client = self.web_container.get_blob_client(path)
+                    await blob_client.upload_blob(file_handle, overwrite=True)
+                    success = True
+            except Exception as exception:
+                retry_count -= 1
 
-            retry_count = 5
-            success = False
-
-            while success is False and retry_count > 0:
-                try:
-                    await blob_client.upload_blob(file_handle, type="BlockBlob")
-                except Exception as exception:
-                    retry_count -= 1
-
-            if not success:
-                print(f"Failed to upload {path_on_disk}")
-            elif log:
-                print(f"Upload: {path_on_disk}")
+        if not success:
+            print(f"Failed to upload {path_on_disk}")
+        elif log:
+            print(f"Upload: {path_on_disk}")
