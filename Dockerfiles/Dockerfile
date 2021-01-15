@@ -7,5 +7,6 @@ RUN pip3 install azure-storage-blob
 RUN pip3 install azure-storage-file
 RUN pip3 install azure-storage-queue
 RUN pip3 install aiohttp
+RUN pip3 install tdqm
 
 RUN apt-get clean
