@@ -46,6 +46,7 @@ parser = argparse.ArgumentParser(description=description)
 parser.add_argument("--download_images", default=False, action="store_true")
 parser.add_argument("--upload_images", default=False, action="store_true")
 parser.add_argument("--upload", default=False, action="store_true")
+parser.add_argument("--reset-content-type", default=False, action="store_true")
 parser.add_argument("--force", "-f", default=False, action="store_true")
 
 ################################################################################
@@ -67,8 +68,11 @@ async def main(args):
         await storage_helper.upload_non_tracked_files(args.force)
     
     elif args.upload:
-        await storage_helper.upload_non_tracked_files(diff=True, force=args.force)
-        await storage_helper.upload_tracked_files(diff=True, force=args.force)
+        await storage_helper.upload_non_tracked_files(force=args.force)
+        await storage_helper.upload_tracked_files(force=args.force)
+    
+    elif args.reset_content_type:
+        await storage_helper.reset_content_type(force=args.force)
 
 ################################################################################
 # __main__
