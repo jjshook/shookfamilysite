@@ -19,6 +19,7 @@ from collections import defaultdict
 import tqdm
 
 from azure.storage.blob.aio import BlobServiceClient
+from azure.storage.blob import ContentSettings
 
 ################################################################################
 # Helper classes
@@ -147,7 +148,46 @@ class ShookFamilyAzureStorageHelper:
         # at this point we have downloaded all files
         pass
 
-    async def upload_non_tracked_files(self, diff=True, force=False):
+    async def reset_content_type(self, force=False):
+        """ Reset the content type of html files.
+
+        Notes:
+        
+        It is possible that a blob was uploaded and not marked as html. This will
+        cause issues when reading the blob in the browser.
+        """
+
+        self.prompt(force)
+        items_in_azure_storage, items_on_disk, differences = await self.get_files(get_untracked_files=False)
+
+        files_to_upload = []
+        for item in items_on_disk[".html"]:
+            item = item.split(self.enlistment_path + os.path.sep)[1]
+            files_to_upload.append(item)
+
+        for item in items_on_disk[".js"]:
+            item = item.split(self.enlistment_path + os.path.sep)[1]
+            files_to_upload.append(item)
+
+        for item in items_on_disk[".css"]:
+            item = item.split(self.enlistment_path + os.path.sep)[1]
+            files_to_upload.append(item)
+
+        # Start the upload of all these blobs
+        tasks = []
+        for path in files_to_upload:
+            tasks.append(self.upload_blob(path, log=False))
+
+        # Create the progress bar
+        progress_bar = tqdm.tqdm(total=len(files_to_upload))
+        for task in asyncio.as_completed(tasks):
+            await task
+            progress_bar.update()
+
+        # at this point we have uploaded all files
+        pass
+
+    async def upload_non_tracked_files(self, force=False):
         """ Upload all untracked files to azure storage in the enlistment
 
         Notes:
@@ -181,7 +221,7 @@ class ShookFamilyAzureStorageHelper:
         # at this point we have downloaded all files
         pass
 
-    async def upload_tracked_files(self, diff=True, force=False):
+    async def upload_tracked_files(self, force=False):
         """ Upload all tracked files to azure storage in the enlistment
 
         Notes:
@@ -203,7 +243,7 @@ class ShookFamilyAzureStorageHelper:
         for item in differences.second_differences:
             files_to_upload.append(item)
 
-        # Start the download of all these blobs
+        # Start the upload of all these blobs
         tasks = []
         for path in files_to_upload:
             tasks.append(self.upload_blob(path, log=False))
@@ -214,7 +254,7 @@ class ShookFamilyAzureStorageHelper:
             await task
             progress_bar.update()
 
-        # at this point we have downloaded all files
+        # at this point we have uploaded all files
         pass
 
 
@@ -242,6 +282,30 @@ class ShookFamilyAzureStorageHelper:
             print(f"Failed to download {path_on_disk}")
         elif log:
             print(f"Downloaded: {path_on_disk}")
+
+    def get_content_type(self, path_on_disk):
+        """ Get the content type for a file on disk.
+
+        Notes:
+        
+        This is required for html/css/js file types to be recognized by specific
+        browsers.
+        """
+
+        content_settings = None
+        
+        extension = os.path.splitext(path_on_disk)[1]
+
+        if extension == ".html":
+            content_settings = ContentSettings(content_type='text/html')
+        elif extension == ".css":
+            content_settings = ContentSettings(content_type='text/css')
+        elif extension == ".js":
+            content_settings = ContentSettings(content_type='text/javascript')
+        else:
+            content_settings = ContentSettings()
+
+        return content_settings
 
     async def get_files(self, get_untracked_files=True):
         items_in_azure_storage = defaultdict(lambda: [])
@@ -348,7 +412,9 @@ class ShookFamilyAzureStorageHelper:
             try:
                 with open(path_on_disk, 'rb') as file_handle:
                     blob_client = self.web_container.get_blob_client(path)
-                    await blob_client.upload_blob(file_handle, overwrite=True)
+
+                    content_settings = self.get_content_type(path_on_disk)
+                    await blob_client.upload_blob(file_handle, overwrite=True, content_settings=content_settings)
                     success = True
             except Exception as exception:
                 retry_count -= 1
