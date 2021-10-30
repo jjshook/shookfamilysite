@@ -263,7 +263,12 @@ class ShookFamilyAzureStorageHelper:
     ############################################################################
 
     async def download_blob(self, blob, log=True):
-        path_on_disk = os.path.join(self.enlistment_path, blob.name)
+        replaced_blob_name = blob.name.replace("/", "\\")
+        path_on_disk = os.path.join(self.enlistment_path, replaced_blob_name)
+
+        directory_above = os.path.dirname(path_on_disk)
+        if not os.path.exists(directory_above):
+            os.makedirs(directory_above)
 
         retry_count = 5
         success = False
