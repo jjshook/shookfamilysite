@@ -40,8 +40,11 @@ pip3 install azure-storage-blob
 pip3 install azure-storage-file
 pip3 install azure-storage-queue
 pip3 install aiohttp
+pip3 install tqdm
 """
 parser = argparse.ArgumentParser(description=description)
+
+parser.add_argument("-connection_string", "-cs", default=None)
 
 parser.add_argument("--download_images", default=False, action="store_true")
 parser.add_argument("--upload_images", default=False, action="store_true")
@@ -59,7 +62,7 @@ async def main(args):
     Return:
         return_code (int)
     """
-    storage_helper = ShookFamilyAzureStorageHelper()
+    storage_helper = ShookFamilyAzureStorageHelper(connection_string=args.connection_string)
 
     if args.download_images:
         await storage_helper.download_non_tracked_files(args.force)

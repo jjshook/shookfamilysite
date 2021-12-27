@@ -96,12 +96,17 @@ class ShookFamilyAzureStorageHelper:
     ############################################################################
     # Ctor
     ############################################################################
-    def __init__(self):
-        secret_name = "CONNECTION_STRING"
-        if secret_name not in os.environ:
-            raise RuntimeError(f"Secret: {secret_name} required in environment.")
+    def __init__(self, connection_string=None):
+        print("Connection string: " + connection_string)
 
-        self.connection_string = os.environ[secret_name]
+        if connection_string is None:
+            secret_name = "CONNECTION_STRING"
+            if secret_name not in os.environ:
+                raise RuntimeError(f"Secret: {secret_name} required in environment.")
+
+            self.connection_string = os.environ[secret_name]
+        else:
+            self.connection_string = connection_string
 
         self.blob_service_client = BlobServiceClient.from_connection_string(self.connection_string)
 
