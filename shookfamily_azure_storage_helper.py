@@ -97,8 +97,6 @@ class ShookFamilyAzureStorageHelper:
     # Ctor
     ############################################################################
     def __init__(self, connection_string=None):
-        print("Connection string: " + connection_string)
-
         if connection_string is None:
             secret_name = "CONNECTION_STRING"
             if secret_name not in os.environ:
@@ -113,7 +111,7 @@ class ShookFamilyAzureStorageHelper:
         self.web_container = self.blob_service_client.get_container_client("$web")
         assert self.web_container is not None
 
-        self.tracked_extensions = set([".html", ".txt", ".csv", ".css", ".js", ".py", ".pyc", ".yml"])
+        self.tracked_extensions = set([".html", ".txt", ".csv", ".css", ".js", ".py", "pyc", ".yml"])
         self.enlistment_path = os.path.realpath(os.path.dirname(__file__))
 
     ############################################################################
@@ -342,7 +340,11 @@ class ShookFamilyAzureStorageHelper:
                 differences.add_to_first(item.name, item)
 
             for item in paths:
-                differences.add_to_second(item.split(self.enlistment_path + os.path.sep)[1], item)
+                cleaned_name = item.split(self.enlistment_path + os.path.sep)[1]
+
+                if "\\" in cleaned_name:
+                    cleaned_name = cleaned_name.replace("\\", "/")
+                differences.add_to_second(cleaned_name, item)
 
             differences.check()
             return differences
@@ -415,6 +417,10 @@ class ShookFamilyAzureStorageHelper:
     async def upload_blob(self, path, log=True):
         path_on_disk = os.path.join(self.enlistment_path, path)
         assert os.path.exists(path_on_disk) and os.path.isfile(path_on_disk)
+
+        if os.name == "nt":
+            if "/" in path_on_disk:
+                path_on_disk = path_on_disk.replace("/", "\\")
 
         retry_count = 5
         success = False

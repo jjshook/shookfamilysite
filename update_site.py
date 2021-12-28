@@ -90,5 +90,9 @@ if __name__ == "__main__":
 
     task = main(args)
 
+    if 'win32' in sys.platform:
+        # Windows specific event-loop policy & cmd
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
     loop = asyncio.get_event_loop()
     loop.run_until_complete(task)
