@@ -40,12 +40,16 @@ pip3 install azure-storage-blob
 pip3 install azure-storage-file
 pip3 install azure-storage-queue
 pip3 install aiohttp
+pip3 install tqdm
 """
 parser = argparse.ArgumentParser(description=description)
+
+parser.add_argument("-connection_string", "-cs", default=None)
 
 parser.add_argument("--download_images", default=False, action="store_true")
 parser.add_argument("--upload_images", default=False, action="store_true")
 parser.add_argument("--upload", default=False, action="store_true")
+parser.add_argument("--upload_tracked_files", default=False, action="store_true")
 parser.add_argument("--reset-content-type", default=False, action="store_true")
 parser.add_argument("--force", "-f", default=False, action="store_true")
 
@@ -59,13 +63,16 @@ async def main(args):
     Return:
         return_code (int)
     """
-    storage_helper = ShookFamilyAzureStorageHelper()
+    storage_helper = ShookFamilyAzureStorageHelper(connection_string=args.connection_string)
 
     if args.download_images:
         await storage_helper.download_non_tracked_files(args.force)
 
     elif args.upload_images:
         await storage_helper.upload_non_tracked_files(args.force)
+
+    elif args.upload_tracked_files:
+        await storage_helper.upload_tracked_files(force=args.force)
     
     elif args.upload:
         await storage_helper.upload_non_tracked_files(force=args.force)
@@ -82,6 +89,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     task = main(args)
+
+    if 'win32' in sys.platform:
+        # Windows specific event-loop policy & cmd
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(task)

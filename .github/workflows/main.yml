@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python3 update_site.py --upload -f
+        run: python3 update_site.py --upload_tracked_files -f -cs "${{ secrets.CONNECTION_STRING }}"
